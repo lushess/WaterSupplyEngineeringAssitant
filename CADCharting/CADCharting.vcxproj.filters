@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Entry">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="App">
+      <UniqueIdentifier>{fcd38c1f-00f5-4587-a8a0-470e3634042e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Head">
+      <UniqueIdentifier>{33661665-f27e-45da-ab5f-a01a86019e7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{9df5a16b-5eff-4cf8-b243-9358eb02ca0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Head">
+      <UniqueIdentifier>{0250f79e-fb8b-4883-98b4-b236b8166d8f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ObjectARX\entry\acrxEntryPoint.cpp">
+      <Filter>Entry</Filter>
+    </ClCompile>
+    <ClCompile Include="app\axonometry.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ObjectARX\utils\CArcUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ObjectARX\utils\CBlockReferenceUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ObjectARX\utils\CCircleUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ObjectARX\utils\CDatabaseUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ObjectARX\utils\CEntityUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ObjectARX\utils\CGetPointUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ObjectARX\utils\CLineUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ObjectARX\utils\CPolylineUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ObjectARX\utils\CSplineUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="app\axonometry.h">
+      <Filter>App\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ObjectARX\utils\CArcUtil.h">
+      <Filter>Utils\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ObjectARX\utils\CBlockReferenceUtil.h">
+      <Filter>Utils\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ObjectARX\utils\CCircleUtil.h">
+      <Filter>Utils\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ObjectARX\utils\CDatabaseUtil.h">
+      <Filter>Utils\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ObjectARX\utils\CEntityUtil.h">
+      <Filter>Utils\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ObjectARX\utils\CGetPointUtil.h">
+      <Filter>Utils\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ObjectARX\utils\CLineUtil.h">
+      <Filter>Utils\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ObjectARX\utils\CPolylineUtil.h">
+      <Filter>Utils\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ObjectARX\utils\CSplineUtil.h">
+      <Filter>Utils\Head</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

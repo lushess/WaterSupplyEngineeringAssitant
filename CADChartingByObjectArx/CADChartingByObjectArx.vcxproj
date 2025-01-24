@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ArxAppType>arx</ArxAppType>
+    <RDS>ADSK</RDS>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <UseOfMfc>false</UseOfMfc>
+    <!-- <UseOfAtl>false</UseOfAtl> -->
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Label="Globals">
+    <TargetName Condition="'$(RDS)'!=''">$(RDS)$(ProjectName)</TargetName>
+    <ProjectGuid>{F87873B0-2B5D-4D52-8FD5-BE1CDC50B2E3}</ProjectGuid>
+    <!--For Visual Studio 2019, you can specify the most recent version of the Windows 10 SDK by using a value of 10.0-->
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Autodesk.arx-2024.props" />
+  </ImportGroup>
+  <PropertyGroup Label="Configuration">
+    <PlatformToolset Condition="'$(ArxSDKPlatform)'=='v143'">v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>..\ObjectARX2024SDK\inc;..\ObjectARX2024SDK\inc-x64;..\ObjectARX2024SDK\utils\amodeler\inc;..\ObjectARX2024SDK\utils\Atil\Inc;..\ObjectARX2024SDK\utils\brep\inc;..\ObjectARX2024SDK\utils\HlrApi\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>..\ObjectARX2024SDK\lib-x64;..\ObjectARX2024SDK\utils\amodeler\lib-x64;..\ObjectARX2024SDK\utils\brep\lib-x64;..\ObjectARX2024SDK\utils\HlrApi\lib-x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions Condition="'$(Platform)'=='x64'">_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(UseOfMfc)'=='Dynamic'">_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <!-- Added to avoid Narrow conversion warnings introduced in VS2015 /Wv:xx[.yy[.zzzzz],  is CL version -->
+      <AdditionalOptions>/Wv:17.00.61030 %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\ObjectARX\public;..\ObjectARX\utils;.\App;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CADChartingByObjectArx.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ObjectARX\entry\acrxEntryPoint.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\ObjectARX\utils\CArcUtil.cpp" />
+    <ClCompile Include="..\ObjectARX\utils\CBlockReferenceUtil.cpp" />
+    <ClCompile Include="..\ObjectARX\utils\CCircleUtil.cpp" />
+    <ClCompile Include="..\ObjectARX\utils\CDatabaseUtil.cpp" />
+    <ClCompile Include="..\ObjectARX\utils\CEntityUtil.cpp" />
+    <ClCompile Include="..\ObjectARX\utils\CGetPointUtil.cpp" />
+    <ClCompile Include="..\ObjectARX\utils\CLineUtil.cpp" />
+    <ClCompile Include="..\ObjectARX\utils\CPolylineUtil.cpp" />
+    <ClCompile Include="..\ObjectARX\utils\CSplineUtil.cpp" />
+    <ClCompile Include="App\axonometry.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ObjectARX\utils\CArcUtil.h" />
+    <ClInclude Include="..\ObjectARX\utils\CBlockReferenceUtil.h" />
+    <ClInclude Include="..\ObjectARX\utils\CCircleUtil.h" />
+    <ClInclude Include="..\ObjectARX\utils\CDatabaseUtil.h" />
+    <ClInclude Include="..\ObjectARX\utils\CEntityUtil.h" />
+    <ClInclude Include="..\ObjectARX\utils\CGetPointUtil.h" />
+    <ClInclude Include="..\ObjectARX\utils\CLineUtil.h" />
+    <ClInclude Include="..\ObjectARX\utils\CPolylineUtil.h" />
+    <ClInclude Include="..\ObjectARX\utils\CSplineUtil.h" />
+    <ClInclude Include="App\axonometry.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
