@@ -25,6 +25,7 @@
 #include "StdAfx.h"
 #include "resource.h"
 #include "axonometry.h"
+#include "autoanalyze.h"
 //-----------------------------------------------------------------------------
 #define szRDS _RXST("ADSK")
 
@@ -43,6 +44,7 @@ public:
 		
 		// TODO: Add your initialization code here
 		ChangeSelectedEntityToAxonometry45Init();
+		createAndAnalyzeDatabaseInit();
 		return (retCode) ;
 	}
 
@@ -54,6 +56,7 @@ public:
 
 		// TODO: Unload dependencies here
 		ChangeSelectedEntityToAxonometry45Unload();
+		createAndAnalyzeDatabaseUnload();
 		return (retCode) ;
 	}
 

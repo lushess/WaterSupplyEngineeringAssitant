@@ -13,7 +13,7 @@
 		<AcadDir Condition="'$(Platform)'=='x64'">D:\Autodesk\AutoCAD2024\AutoCAD 2024\</AcadDir>
 		<AcadExe Condition="'$(ArxAppType)'=='dbx' or '$(ArxAppType)'=='dbxnet' or '$(ArxAppType)'=='arx' or '$(ArxAppType)'=='arxnet'">acad.exe</AcadExe>
 		<AcadExe Condition="'$(ArxAppType)'=='crx' or '$(ArxAppType)'=='crxnet'">accoreconsole.exe</AcadExe>
-		<ArxSdkDir>C:\ObjectARX2024\</ArxSdkDir>
+		<ArxSdkDir>..\ObjectARX2024SDK\</ArxSdkDir>
 		<ArxSdkIncs Condition="'$(Platform)'=='x64'">$(ArxSdkDir)\inc;$(ArxSdkDir)\inc-x64</ArxSdkIncs>
 		<ArxHlrIncs>$(ArxSdkDir)\utils\HlrApi\inc</ArxHlrIncs>
 		<ArxAmodelerIncs>$(ArxSdkDir)\utils\amodeler\inc</ArxAmodelerIncs>

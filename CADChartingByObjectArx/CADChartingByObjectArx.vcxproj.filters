@@ -65,6 +65,9 @@
     <ClCompile Include="App\axonometry.cpp">
       <Filter>App</Filter>
     </ClCompile>
+    <ClCompile Include="App\autoanalyze.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ObjectARX\utils\CArcUtil.h">
@@ -95,6 +98,9 @@
       <Filter>Utils\Head</Filter>
     </ClInclude>
     <ClInclude Include="App\axonometry.h">
+      <Filter>App\Head</Filter>
+    </ClInclude>
+    <ClInclude Include="App\autoanalyze.h">
       <Filter>App\Head</Filter>
     </ClInclude>
   </ItemGroup>

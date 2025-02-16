@@ -62,9 +62,12 @@
       <AdditionalOptions>/Wv:17.00.61030 %(AdditionalOptions)</AdditionalOptions>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\ObjectARX\public;..\ObjectARX\utils;.\App;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\ObjectARX\public;..\ObjectARX\utils;..\sqlite-x64-3480000;.\App;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
+    </Link>
+    <Link>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\sqlite-x64-3480000;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -90,6 +93,7 @@
     <ClCompile Include="..\ObjectARX\utils\CLineUtil.cpp" />
     <ClCompile Include="..\ObjectARX\utils\CPolylineUtil.cpp" />
     <ClCompile Include="..\ObjectARX\utils\CSplineUtil.cpp" />
+    <ClCompile Include="App\autoanalyze.cpp" />
     <ClCompile Include="App\axonometry.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +106,7 @@
     <ClInclude Include="..\ObjectARX\utils\CLineUtil.h" />
     <ClInclude Include="..\ObjectARX\utils\CPolylineUtil.h" />
     <ClInclude Include="..\ObjectARX\utils\CSplineUtil.h" />
+    <ClInclude Include="App\autoanalyze.h" />
     <ClInclude Include="App\axonometry.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
